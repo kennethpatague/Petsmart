@@ -33,7 +33,7 @@ def get_products():
             print(f"Getting product links from {sitemap} - ({len(loc_tags)}) products")
 
             for loc in loc_tags:
-                if loc not in product_links:
+                if '.html' in loc.text and loc.text not in product_links:
                     product_links.append(loc.text)
     except Exception as e:
         print("Error: ", e)
